@@ -3,8 +3,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -14,8 +14,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|naem|string|index: true, null: false, unique:true|
-|mail|string|null: false|
+|name|string|index: true, null: false, unique:true|
 
 ### Association
 - has_many :groups, through: members
@@ -26,9 +25,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|groups_name|string|index: true, null: false,|
-|user_id|integer|null: false,<br>   foreign_key: true,|
-|message_id|integer|null: false,<br>foreign_key: true,|
+|name|string|index: true, null: false,|
+|user|references|null: false,   foreign_key: true,|
+|message|references|null: false,foreign_key: true,|
 
 ### Association
 - has_many :users, through: members
@@ -39,10 +38,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false,|
-|image|text|foreign_key: true,|
-|user_id|integer|null: false,<br>foreign_key: true,|
-|group_id|integer|null: false,<br>foreign_key: true,|
+|message|string||
+|image|string||
+|user|references|null: false,foreign_key: true|
+|group|references|null: false,foreign_key: true|
 
 ### Association
 - belongs_to :user
