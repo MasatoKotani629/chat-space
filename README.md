@@ -26,7 +26,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false,|
-|user|references|null: false,   foreign_key: true,|
 |message|references|null: false,foreign_key: true,|
 
 ### Association
@@ -38,7 +37,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|message|string||
+|message|text||
 |image|string||
 |user|references|null: false,foreign_key: true|
 |group|references|null: false,foreign_key: true|
