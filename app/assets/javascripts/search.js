@@ -29,7 +29,6 @@ $(function() {
 
   $('#user-search-field').on("keyup", function() {
     var input = $('#user-search-field').val();
-    console.log(input);
     if (input != "") {
       $.ajax( {
         type: 'GET',
@@ -59,7 +58,6 @@ $(function() {
     $(this).parent().remove();
     var user_id =  $(this).attr('data-user-id');
     var user_name = $(this).attr('data-user-name');
-    console.log(user_id)
     appendUserInGroup(user_id, user_name)
   });
   $(document).on('click', '.user-search-remove', function() {
