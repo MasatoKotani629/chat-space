@@ -4,7 +4,7 @@ $(function() {
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
-                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" id="user_info" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</div>
+                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" id="user_info" user-id="${ user.id }" user-name="${ user.name }">追加</div>
                 </div>`
     user_list.append(html);            
     }
@@ -56,8 +56,8 @@ $(function() {
   }); 
   $(document).on('click', '.user-search-add', function() {
     $(this).parent().remove();
-    var user_id =  $(this).attr('data-user-id');
-    var user_name = $(this).attr('data-user-name');
+    var user_id =  $(this).attr('user-id');
+    var user_name = $(this).attr('user-name');
     appendUserInGroup(user_id, user_name)
   });
   $(document).on('click', '.user-search-remove', function() {
