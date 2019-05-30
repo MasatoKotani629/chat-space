@@ -2,7 +2,7 @@ $(function() {
 
   var user_list = $("#user-search-result");
   function appendUser(user) {
-    var html = `<div class="chat-group-user clearfix">
+    var html = `<div class="chat-group-user clearfix" id='delete'>
                   <p class="chat-group-user__name">${ user.name }</p>
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" id="user_info" user-id="${ user.id }" user-name="${ user.name }">追加</div>
                 </div>`
@@ -44,7 +44,7 @@ $(function() {
           });
         }
         else {
-          $('.chat-group-user').remove();
+          $('#user-search-result').empty();
           appendErrMsgToHTML("一致する名前はありません");
         };
       })
