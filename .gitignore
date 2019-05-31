@@ -17,3 +17,4 @@
 .byebug_history
 public/uploads/*bundle exec rake db:see
 public/uploads/*
+config/secrets.yml
